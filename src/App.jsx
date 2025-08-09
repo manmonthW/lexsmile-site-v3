@@ -8,6 +8,42 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
  * 颜色：#1e40af / #374151 / #f3f4f6 + 金色点缀
  */
 
+/********************* 测试网站提示浮窗 **************************/
+function TestSiteNotification() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  // 检查是否已经关闭过浮窗
+  useEffect(() => {
+    const dismissed = localStorage.getItem('testSiteDismissed');
+    if (dismissed) {
+      setIsVisible(false);
+    }
+  }, []);
+
+  const handleClose = () => {
+    setIsVisible(false);
+    localStorage.setItem('testSiteDismissed', 'true');
+  };
+
+  if (!isVisible) return null;
+
+  return (
+    <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-yellow-400 text-yellow-900 px-6 py-3 rounded-lg shadow-lg border border-yellow-500 flex items-center gap-3 max-w-sm">
+      <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+        <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+      </svg>
+      <span className="font-medium">目前为测试网站！</span>
+      <button 
+        onClick={handleClose}
+        className="ml-2 text-yellow-700 hover:text-yellow-900 font-bold text-lg leading-none"
+        aria-label="关闭"
+      >
+        ×
+      </button>
+    </div>
+  );
+}
+
 /********************* 工具：极简路由（哈希路由） **************************/
 const routes = ["/", "/about", "/services", "/news", "/ai", "/contact"]; // 对应导航
 
@@ -859,6 +895,7 @@ export default function App() {
     <div className="min-h-screen flex flex-col bg-[#f3f4f6] text-[#374151]">
       <DevTests />
       <Header t={t} path={path} push={push} lang={lang} setLang={setLang} />
+      <TestSiteNotification />
       <div className="flex-1">
         {path === "/" && <Home t={t} push={push} />}
         {path === "/about" && <About t={t} />}
