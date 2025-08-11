@@ -693,6 +693,51 @@ function AISolutions({ t }) {
   return (
     <main>
       <Section title="AI 产品总览" subtitle="核心技术：机器学习、深度学习、NLP、RPA">
+        {/* AI 实用工具 - 醒目展示 */}
+        <div className="rounded-2xl border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 mb-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-xl bg-blue-800 text-white flex items-center justify-center">
+              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                <path d="M14 2v6h6"/>
+                <path d="M16 13H8"/>
+                <path d="M16 17H8"/>
+                <path d="M10 9H8"/>
+              </svg>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-gray-900">AI 实用工具</h3>
+              <p className="text-gray-600 text-sm">专业法律文档智能分析</p>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            <a 
+              href="https://analyzer.xiaodalaw.cn/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group bg-white rounded-xl p-5 border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200"
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="font-semibold text-gray-900 group-hover:text-blue-800">判决文书分析工具</h4>
+                  <p className="text-sm text-gray-600 mt-1">智能解析判决文书，提取关键信息</p>
+                </div>
+                <div className="text-blue-600 group-hover:text-blue-800">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </div>
+              </div>
+            </a>
+            <div className="bg-white/50 rounded-xl p-5 border border-dashed border-gray-300">
+              <div className="text-gray-500 text-sm">
+                <div className="font-medium">更多工具即将上线</div>
+                <div className="mt-1">合同审阅、风险评估等</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid lg:grid-cols-3 gap-6">
           <div className="rounded-2xl border bg-white p-6 lg:col-span-2">
             <h4 className="font-semibold text-gray-900">技术架构图（占位）</h4>
