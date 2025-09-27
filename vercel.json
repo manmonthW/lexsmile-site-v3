@@ -1,0 +1,11 @@
+{
+  "routes": [
+    {
+      "src": "/google295b9b69fb24690c.html",
+      "dest": "/google295b9b69fb24690c.html",
+      "headers": {
+        "Content-Type": "text/html"
+      }
+    }
+  ]
+}
